@@ -54,7 +54,7 @@
     background: var(--ivory);
     overflow: hidden;
     box-shadow: 0 0 60px -20px rgba(92,104,88,0.35);
-    padding-bottom: 96px;
+    padding-bottom: 96px; /* room for sticky footer */
   }
 
   section { position: relative; padding: 76px 30px; }
@@ -183,7 +183,7 @@
     text-align: left;
     font-family: var(--serif);
     font-weight: 600;
-    font-size: 38px;
+    font-size: 34px;
     line-height: 1.5;
     color: #43433f;
     letter-spacing: 0.06em;
@@ -238,7 +238,7 @@
   .sec-root { background: var(--ivory); }
   .pull {
     font-family: var(--serif); font-weight: 500;
-    font-size: 17px; line-height: 1.85; color: var(--ink);
+    font-size: 22px; line-height: 1.85; color: var(--ink);
     border-left: 2px solid var(--sage-light);
     padding-left: 20px; margin: 0 0 28px;
   }
@@ -308,9 +308,9 @@
     text-align: center; position: relative;
   }
   .price-feature .tag {
-    position: absolute; top: -13px; left: 50%; transform: translateX(-50%);
-    background: var(--sage); color: #fff; font-size: 12px; font-weight: 700;
-    letter-spacing: .12em; padding: 6px 18px; border-radius: 999px; white-space: nowrap;
+    position: absolute; top: -16px; left: 50%; transform: translateX(-50%);
+    background: var(--sage); color: #fff; font-size: 15px; font-weight: 700;
+    letter-spacing: .1em; padding: 8px 22px; border-radius: 999px; white-space: nowrap;
     box-shadow: 0 8px 16px -8px rgba(92,104,88,.6);
   }
   .price-feature .ft-label { font-family: var(--serif); font-size: 15px; color: var(--ink-soft); margin: 8px 0 6px; }
@@ -364,6 +364,8 @@
     overflow: hidden; border: 1px solid var(--ivory-3);
     box-shadow: inset 0 0 0 1px #fff, 0 10px 26px -16px rgba(92,104,88,.4);
   }
+  .salon-collage { margin-top: 22px; }
+  .salon-collage img { width: 100%; height: auto; display: block; }
   .map-embed iframe { width: 100%; height: 100%; display: block; }
   .info-list { list-style: none; margin: 24px 0 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
   .info-list li { display: flex; gap: 16px; align-items: flex-start; }
@@ -394,6 +396,37 @@
   .sec-final p { color: rgba(255,255,255,.92); font-size: 14.5px; line-height: 2; }
   .sec-final .cta-wrap { max-width: 360px; margin: 34px auto 0; }
   .sec-final .cta-note { color: rgba(255,255,255,.82); }
+
+  /* registration gift */
+  .gift {
+    max-width: 380px; margin: 34px auto 0;
+    background: rgba(255,255,255,.96); border-radius: 22px;
+    padding: 30px 26px 26px; position: relative;
+    box-shadow: 0 24px 50px -24px rgba(40,55,38,.55);
+    text-align: left;
+  }
+  .gift-tag {
+    position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+    background: var(--gold); color: #fff; font-family: var(--serif);
+    font-size: 13px; font-weight: 700; letter-spacing: .14em;
+    padding: 7px 22px; border-radius: 999px; white-space: nowrap;
+    box-shadow: 0 8px 16px -8px rgba(150,120,50,.7);
+  }
+  .gift-lead {
+    text-align: center; font-family: var(--serif); font-size: 17px;
+    color: var(--ink) !important; line-height: 1.7; margin: 6px 0 20px !important;
+  }
+  .gift-lead b { color: var(--sage-ink); font-weight: 700; }
+  .gift-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+  .gift-list li { display: flex; align-items: center; gap: 14px; }
+  .gift-list .g-ico {
+    flex: none; width: 44px; height: 44px; border-radius: 50%;
+    background: var(--gold-bg); border: 1px solid var(--gold-soft);
+    display: grid; place-items: center; color: var(--gold);
+  }
+  .gift-list .g-ico svg { width: 23px; height: 23px; }
+  .gift-list .g-txt b { display: block; font-family: var(--serif); font-size: 15.5px; color: var(--ink); letter-spacing: .02em; }
+  .gift-list .g-txt small { display: block; font-size: 12px; color: var(--ink-faint); margin-top: 2px; letter-spacing: .02em; }
 
   footer.site {
     background: #3F4A3D; color: rgba(255,255,255,.6); text-align: center;
@@ -504,13 +537,14 @@
   <!-- ① HERO -->
   <header class="hero" data-screen-label="① ヒーロー">
     <svg class="corner" style="top:-10px;left:-14px;width:90px;height:128px;transform:rotate(18deg)" aria-hidden="true"><use href="#sprig"/></svg>
-    <img class="hero-logo" src="project/assets/logo.jpg" alt="自律神経を整える アロマケア Fuwa²" />
+    <img class="hero-logo" src="assets/logo.jpg" alt="自律神経を整える アロマケア Fuwa²" />
     <h1>
       <span class="br">病院に行っても、</span>
       <span class="br">よくならないあなたへ。</span>
     </h1>
     <p class="sub">その不調、原因から見直しませんか。</p>
-    <p class="hero-lead">根本解決<br/>目指すための<br/>ケアサロン</p>
+    <p class="hero-lead" style="font-size: 38px">根本解決
+目指すためのケアサロン</p>
     <div class="cta-wrap">
       <button class="cta" data-cta>
         <svg class="ico"><use href="#line-ico"/></svg>
@@ -541,7 +575,7 @@
   <section class="sec-root" data-screen-label="③ 根本ケア">
     <p class="eyebrow rv">Root care</p>
     <h2 class="head rv">対症療法では、<br/><span class="accent">終わらせません。</span></h2>
-    <p class="pull rv">今のあなたの身体をつくっているのは、今の考え方と、毎日の生活パターンです。</p>
+    <p class="pull rv" style="font-size: 17px">今のあなたの身体をつくっているのは、今の考え方と、毎日の生活パターンです。</p>
     <p class="rv lead">だから、痛みやしんどさだけを取り除いても、原因がそのままなら、また同じことを繰り返してしまう。</p>
     <p class="rv lead">このサロンでは、原因を一緒に追究し、生活習慣・体質そのものを見直していきます。目指すのは、その場しのぎではなく、根本的な解決です。</p>
   </section>
@@ -580,11 +614,11 @@
     <div class="flow">
       <div class="step rv"><div class="marker">1</div><div class="body"><h4>カウンセリング</h4><p>じっくりお話を伺います</p></div></div>
       <div class="step rv"><div class="marker">2</div><div class="body"><h4>自律神経チェック</h4><p>今の状態を見える化</p>
-        <div class="step-thumbs"><img src="project/assets/flow-3.png" alt="自律神経チェックシート" loading="lazy" /></div>
+        <div class="step-thumbs"><img src="assets/flow-3.png" alt="自律神経チェックシート" loading="lazy" /></div>
       </div></div>
       <div class="step rv"><div class="marker">3</div><div class="body"><h4>血圧測定</h4><p>身体のサインを確認</p></div></div>
       <div class="step rv"><div class="marker">4</div><div class="body"><h4>アロマ・ホットストーン</h4><p>心身をゆるめていきます</p>
-        <div class="step-thumbs"><img src="project/assets/flow-1.png" alt="アロマトリートメントの様子" loading="lazy" /><img src="project/assets/flow-2.png" alt="ホットストーンの様子" loading="lazy" /></div>
+        <div class="step-thumbs"><img src="assets/flow-1.png" alt="アロマトリートメントの様子" loading="lazy" /><img src="assets/flow-2.png" alt="ホットストーンの様子" loading="lazy" /></div>
       </div></div>
     </div>
   </section>
@@ -595,7 +629,7 @@
     <h2 class="head rv">まずは、<br/>初回限定価格で。</h2>
 
     <div class="price-feature rv">
-      <span class="tag">初回限定 ｜ 60分</span>
+      <span class="tag" data-comment-anchor="f93b8880f6-span">初回限定 ｜ 60分</span>
       <div class="ft-label">じっくり向き合う、はじめての60分</div>
       <div class="ft-from"><s>通常 10,000円</s></div>
       <div class="ft-arrow">▼</div>
@@ -604,7 +638,7 @@
 
     <div class="price-list">
       <div class="price-row rv"><div class="label">90分コース<small>じっくりケア</small></div><div class="val">15,000<span>円</span></div></div>
-      <div class="price-row rv"><div class="label">120分コース<small>たっぷりケア</small></div><div class="val">20,000<span>円</span></div></div>
+      <div class="price-row rv"><div class="label">120分コース<small>フェイシャルパック＋足湯デトックス＋ヘッドスパ</small></div><div class="val">20,000<span>円</span></div></div>
     </div>
     <p class="price-note rv">※価格税込／その他オプションあり</p>
 
@@ -631,7 +665,7 @@
   <section class="sec-msg" data-screen-label="⑦ メッセージ">
     <p class="eyebrow rv">Message</p>
     <h2 class="head rv">本気で良くなりたいあなたと、<br/>本気で向き合います。</h2>
-    <img class="portrait rv" src="project/assets/treatment.png" alt="施術中の松井知子" />
+    <img class="portrait rv" src="assets/treatment.png" alt="施術中の松井知子" />
     <div class="body-copy">
       <p class="rv">「この痛みやしんどさは、どうしたらいいの？」そう思いながら、答えが見つからない方を、たくさん見てきました。</p>
       <p class="rv">でも、本来あなたの身体は、健康になる力を持っています。それを一緒に取り戻していく。それが私の仕事です。</p>
@@ -657,26 +691,44 @@
       <li class="rv"><span class="k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L20 13l2 5v3H5a1 1 0 0 1-1-1V4Z"/></svg></span><span class="v"><a href="tel:08038361214">080-3836-1214</a><small>お電話でのお問い合わせ</small></span></li>
       <li class="rv"><span class="k"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2" stroke-linecap="round"/></svg></span><span class="v"><b>10:00 – 20:00</b><small>完全予約制</small></span></li>
     </ul>
+    <div class="salon-collage rv">
+      <img src="assets/salon-collage.png" alt="Fuwa² サロンの様子" loading="lazy" />
+    </div>
   </section>
 
   <!-- ⑨ FINAL CTA -->
   <section class="sec-final" id="final" data-screen-label="⑨ 最終CTA">
     <svg class="corner" style="top:-20px;right:-18px;width:120px;height:170px;transform:rotate(150deg)" aria-hidden="true"><use href="#sprig"/></svg>
     <svg class="corner" style="bottom:60px;left:-22px;width:96px;height:136px;transform:rotate(-30deg)" aria-hidden="true"><use href="#sprig"/></svg>
-    <p class="eyebrow">Take the first step</p>
-    <h2>その一歩を、<br/>ここから。</h2>
-    <p>ご予約も、ご相談も、すべて公式LINEから。<br/>登録は無料、しつこい勧誘は一切ありません。<br/>まずは「話を聞いてみたい」だけでも大丈夫です。</p>
+    <p>ご予約も、ご相談も、公式LINEから承ります。</p>
+    <div class="gift rv">
+      <span class="gift-tag">ご登録特典</span>
+      <p class="gift-lead">いま友だち追加で、<br/>うれしい<b>3つのプレゼント</b>。</p>
+      <ul class="gift-list">
+        <li>
+          <span class="g-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 4.5c-2 0-3.2 1.6-3.2 3.2 0 2.7 3.2 5.3 3.2 5.3s3.2-2.6 3.2-5.3c0-1.6-1.2-3.2-3.2-3.2Z"/><path d="M6 14c0 3.3 2.7 5.5 6 5.5s6-2.2 6-5.5" stroke-linecap="round"/></svg></span>
+          <span class="g-txt"><b>フェイシャルパック</b><small>うるおいを届けるスペシャルケア</small></span>
+        </li>
+        <li>
+          <span class="g-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6.5 9h11v7a3 3 0 0 1-3 3h-5a3 3 0 0 1-3-3V9Z"/><path d="M9 9V6.5a3 3 0 0 1 6 0V9" stroke-linecap="round"/><path d="M10 13c.6.6.6 1.4 0 2m4-2c.6.6.6 1.4 0 2" stroke-linecap="round"/></svg></span>
+          <span class="g-txt"><b>入浴剤</b><small>おうち時間をやさしく整える</small></span>
+        </li>
+        <li>
+          <span class="g-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9.5 3h5M10 3v2.2c0 .5-.2 1-.6 1.4L8 8.2A3 3 0 0 0 7 10.5V19a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-8.5a3 3 0 0 0-1-2.3l-1.4-1.6a2 2 0 0 1-.6-1.4V3"/><path d="M7 13h10" /></svg></span>
+          <span class="g-txt"><b>水素水ペットボトル</b><small>身体の内側からリフレッシュ</small></span>
+        </li>
+      </ul>
+    </div>
     <div class="cta-wrap">
       <button class="cta ghost" data-cta>
         <svg class="ico"><use href="#line-ico"/></svg>
         公式LINEを登録する
       </button>
-      <p class="cta-note">※登録後、初回8,000円のご予約方法をご案内します。</p>
     </div>
   </section>
 
   <footer class="site">
-    <img class="fl" src="project/assets/logo.jpg" alt="アロマケア Fuwa²" />
+    <img class="fl" src="assets/logo.jpg" alt="アロマケア Fuwa²" />
     アロマケア Fuwa²（ふわふわ）<br/>
     神戸市中央区二宮町3丁目11-10 ラフィーネ201号<br/>
     © 2026 Fuwa² Aroma Care.
@@ -703,8 +755,7 @@
     <h3>公式LINEを登録する</h3>
     <p class="s-sub">下のQRコードを読み取るか、ボタンから<br/>LINEで友だち追加してください。</p>
     <div class="qr-ph">
-      <div class="qbox"><svg class="sprig" style="opacity:.4"><use href="#sprig"/></svg></div>
-      <span class="qlab">QRコード（差し替え）</span>
+      <img src="assets/line-qr.png" alt="公式LINE QRコード" style="width:160px;height:160px;border-radius:10px;" />
     </div>
     <p class="or">— または —</p>
     <button class="cta" id="openLine">
@@ -728,6 +779,7 @@
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
   document.querySelectorAll('.rv').forEach(function(el, i){
+    // tiny stagger within a group
     el.style.transitionDelay = (i % 6) * 60 + 'ms';
     io.observe(el);
   });
@@ -740,8 +792,8 @@
   document.getElementById('modalClose').addEventListener('click', closeModal);
   modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
   document.getElementById('openLine').addEventListener('click', function(){
-    // Replace with the real official LINE account URL.
-    window.open('https://line.me/', '_blank');
+    // 公式LINE 友だち追加リンク
+    window.open('https://line.me/R/ti/p/@093vldnq', '_blank');
   });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
 
